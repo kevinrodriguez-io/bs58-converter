@@ -2,6 +2,8 @@
 
 A command-line tool that converts Base58 strings to byte arrays and saves them as JSON files.
 
+I made this as a little helper to grab my id.json file from my Phantom Solana wallet.
+
 ## Features
 
 - Convert Base58 strings to byte arrays
@@ -28,7 +30,7 @@ This will install the `bs58-converter` binary in your system.
 
 Basic usage:
 ```bash
-bs58-converter --input <BASE58_STRING>
+bs58-converter -i <BASE58_STRING> -o ~/.config/solana/id.json
 ```
 
 This will create an `output.json` file in the current directory.
@@ -36,6 +38,7 @@ This will create an `output.json` file in the current directory.
 ### Options
 
 - `-i, --input`: The Base58 string to convert (required)
+- `-f, --input-file`: Input file containing the Base58 string (optional)
 - `-o, --output`: Output JSON file path (optional, defaults to "output.json")
 - `-h, --help`: Show help information
 - `-V, --version`: Show version information
@@ -56,6 +59,5 @@ bs58-converter --input "5Q6qHRLW2wntVBwRWFyqj5eXKFqHN6" --output my-bytes.json
 
 The tool generates a JSON file with the following structure:
 ```json
-{
-  "bytes": [1, 2, 3, ...]  // Array of decoded bytes
-} 
+[1,2,3,...]  // Array of decoded bytes
+```
